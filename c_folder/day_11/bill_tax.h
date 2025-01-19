@@ -1,6 +1,6 @@
 //Header file for bill_tax program
 
-float total = 0.0;
+float total = 0.0; // These variables will be shared by any file that uses this header file
 short count = 0;
 short tax_percent = 6;
 

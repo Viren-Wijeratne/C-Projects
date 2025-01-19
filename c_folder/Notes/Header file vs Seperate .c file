@@ -1,0 +1,13 @@
+When to Use Which Method?
+
+*Header File Method:
+
+When you need a separation of interface and implementation for better modularity, especially in larger projects or when creating libraries.
+If multiple .c files need to use the same function, a header file ensures they all share the same function signature without duplication.
+Ideal for reusable functions, like in a shared library or API.
+
+*Separate .c File Method:
+
+Suitable for small projects or tight coupling where only one file or a few files are involved.
+Useful when you don't need to expose the function to many other files or you're just working on a small, self-contained program.
+If you don't need a complex modular structure, this method is quicker to implement.
