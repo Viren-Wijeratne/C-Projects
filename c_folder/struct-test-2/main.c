@@ -35,7 +35,18 @@ a.care.food.weight, a.care.food.ingredients, a.care.exercise.description, a.care
 
 int main(){
 
-struct fish snappy = {"Snappy", "Piranha", 69, 4, {{"meat", 0.2}, {"swim in jacuzzi", 7.5}}}; 
+struct fish snappy = {  //{"Snappy", "Piranha", 69, 4, {{"meat", 0.2}, {"swim in jacuzzi", 7.5}}}; 
+  .name = "Snappy",    //Data is presented using designated initializers. Its is the same as above line of code 
+  .species = "Piranha",
+  .age = 69,
+  .teeth = 4,
+
+  .care.food.ingredients = "meat",
+  .care.food.weight = 0.2,
+  .care.exercise.description = "swin in jacuzzi",
+  .care.exercise.duration = 7.5 
+
+};
    // printf("%s\n", snappy.name);
     catalog(snappy);
     label(snappy);
