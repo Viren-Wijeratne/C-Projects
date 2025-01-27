@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-typedef enum {
-  COUNT, POUNDS, PINTS 
-}unit_of_measure;
+typedef enum { //enums are used to keep track of values stored in unions, it stores a symbol
+  COUNT, POUNDS, PINTS //Enum is a simple way to assign name to integer values, internally the compiler replaces this value with the specific numbers
+}unit_of_measure; //Simply it is just assigning names or aliases to integers for easy reading of the code. Substition
 
-typedef union{
+typedef union{ //Similar to a struct, its a new data type, but uses the same address space. So the value stored can be used with different data types. Size is determined by the largest field
   short count;
   float weight;
   float volume;
@@ -14,7 +14,7 @@ typedef struct{
   const char *name;
   const char *country;
   quantity amount;
-  unit_of_measure units;
+  unit_of_measure units; //union within a struct
 }fruit_order;
 
 void display(fruit_order order){
