@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "stdio.h": "c",
-        "bill_tax.h": "c"
+        "bill_tax.h": "c",
+        "memory.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

@@ -24,7 +24,7 @@ physical lines for readability.
 */
 
 #define GROW_ARRAY(type, pointer, oldCount, newCount) \
-  (type*)reallocate(pointer, size_of(type) * (oldCount), sizeof(type) * (newCount))
+  (type*)reallocate((pointer), sizeof(type) * (oldCount), sizeof(type) * (newCount))
 
 /*Note:
   - considers the data type ==> "type" {As this is an array it will only contain elements with the same data type only, if not a link list has to be used}
@@ -53,6 +53,10 @@ Examples of this code in action:
         array = GROW_ARRAY(int, array, newCount, 0);   
     newCount is 0, so the reallocate() function frees the memory and return NULL 
 */
+#define FREE_ARRAY(type, pointer, oldCount)\
+  reallocate(pointer, sizeof(type) * (oldCount), 0)
+
+
 void* reallocate(void* pointer, size_t oldSize, size_t newSize);
 
 #endif
