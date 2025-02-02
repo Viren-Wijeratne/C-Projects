@@ -1,6 +1,7 @@
 Properties of a stack
-- There are multiple methods to implemet a stack using underlying dara structures such as linked lists and dynamic arrays as examples
+- There are multiple methods to implement a stack using underlying dara structures such as linked lists and dynamic arrays as examples
 - This example is using a dynamically allocated array
+- Stack follows the last in-first (LIFO) out logic
 
 Operations of the stack:
 - Check if a stack is empty

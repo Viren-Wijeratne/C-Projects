@@ -36,7 +36,9 @@ printf("Peek Val: %d\n", peek_val);
 
 bool try_peek = peek(stack, &peek_val);
 if(try_peek == false) printf("Peek Failed.\n");
-/*
+
+read_stack(stack);
+
 int pop_val = 0;
 for (int i=0; i < 5; i++){
   pop(stack, &pop_val);
@@ -44,9 +46,7 @@ for (int i=0; i < 5; i++){
 }
 bool try_pop = pop(stack, &pop_val);
 if (try_pop == false) printf("Pop Failed.\n");
-*/
 
-read_stack(stack);
 destroy_stack(stack);
 
   return 0;

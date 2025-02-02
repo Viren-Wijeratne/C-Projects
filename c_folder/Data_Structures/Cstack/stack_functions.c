@@ -64,6 +64,6 @@ bool peek(Stack *stack, int *item){
 bool pop(Stack *stack, int *item){
   if(is_empty(stack) ) return false;
   stack->size--; //We are just reducing the stack boundry such that the top most item will be present in memory but will no longer be refered to be within the stack
-  *item = stack->collection[stack->size];
+  *item = stack->collection[stack->size]; // Used to return what was recently removed
   return true;
 }
