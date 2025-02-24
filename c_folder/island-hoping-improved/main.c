@@ -18,6 +18,16 @@ island* create(char *name){
   return i;
 }
 
+void release(island *start){
+  island *i = start;
+  island *next = NULL;
+  for(; i != NULL; i = next){
+    next = i->next; // Set next to point to the next island
+    free(i->name); // Free name string created by strdup()
+    free(i); // Then free the island struct
+  }
+}
+
 void display(island *start){
   island *i = start;
   for(; i != NULL ; i = i -> next){ //i = i -> next;    assigns next nodes address location to i, i->next; same as (*i).next;
@@ -26,22 +36,18 @@ void display(island *start){
 }
 
 int main(){
+  island *start = NULL;
+  island *i = NULL;
+  island *next = NULL;
+  char name[80];
+  for(; fgets(name, 80, stdin) != NULL; i = next){ // We run the loop until no more "island" names are provided by the user as fgets returns NULL when there is no input. Here we copy the pointer to the old node to pointer variable "i"
+    next = create(name); // Pointer to the newly created node is assigned to next
+    if(start == NULL) start = next; // This code is applicble only for the creation of the first node of the linked list
+    if(i != NULL) i->next  = next; // This is done to connect the previous node "i" to the newly created node "next"
+  }
 
-  island amity = {"Amity", "09:00", "17:00", NULL}; //NULL wiil set the pointer intially to 0, this is changed later
-  island craggy = {"Craggy", "09:00", "17:00", NULL}; //Initializing nodes of the linked list
-  island isla_nublar = {"Isla Nublar", "09:00", "17:00", NULL};
-  island shutter = {"Shutter", "09:00", "17.00", NULL};
-
-  amity.next = &craggy; // We are assigning the pointer to the next island struct in the linked list
-  craggy.next = &isla_nublar; //This is were the linking happens. Earlier NULL was set to next such that it can be changed conviniently here
-  isla_nublar.next = &shutter; // This will be changed later down the code
-
-  island skull = {"Skull", "9:00", "17:00", NULL}; // Adding new node "skull" beteween isle_nublar and shutter nodes
-  isla_nublar.next = &skull; //Rearranging the links
-  skull.next = &shutter;
-
-  display(&amity); //Passing &amitty will point to the starting node for the "for" loop which will iterate through each node until it finds NULL at the last node.
-
+  display(start); // Passing &amitty will point to the starting node for the "for" loop which will iterate through each node until it finds NULL at the last node.
+  release(start);
   return 0;
 }
 

@@ -1,0 +1,1 @@
+- A void* (void pointer) is a generic pointer type that can point to any data type. It is often used when the type of data is not known in advance or when writing generic functions.
