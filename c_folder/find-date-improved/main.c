@@ -70,4 +70,4 @@ So here on out name_fn can be used similar to any variable pointer is used in ou
 
 /*
     match(ADS[i]) == (*match)(ADS[i])
-*/
+*/ 
